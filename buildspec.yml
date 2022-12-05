@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - sed -i 's/FROM .*/FROM 687740418393.dkr.ecr.ap-south-1.amazonaws.com\/test-node:latest/' Dockerfile
+      - sed -i 's/FROM .*/FROM 198653053291.dkr.ecr.us-east-1.amazonaws.com\/test-node:latest/' Dockerfile
       - docker build -t backend:latest .
       - docker tag backend:latest 198653053291.dkr.ecr.us-east-1.amazonaws.com/test-node:latest 
   post_build:
