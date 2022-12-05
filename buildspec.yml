@@ -10,7 +10,7 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t backend:latest .
-      - docker tag backend:latest 198653053291.dkr.ecr.us-east-1.amazonaws.com  
+      - docker tag backend:latest 198653053291.dkr.ecr.us-east-1.amazonaws.com/test-node:latest 
   post_build:
     commands:
       - echo Build completed on `date`
