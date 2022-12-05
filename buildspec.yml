@@ -10,8 +10,12 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - sed -i 's/FROM .*/FROM 198653053291.dkr.ecr.us-east-1.amazonaws.com\/test-node:latest/' Dockerfile
+      - aws s3 cp s3://test-bucket12312414/pending_today ./
+      - ls -al
+      - pwd
       - docker build -t backend:latest .
       - docker tag backend:latest 198653053291.dkr.ecr.us-east-1.amazonaws.com/test-node:latest 
+      
   post_build:
     commands:
       - echo Build completed on `date`
